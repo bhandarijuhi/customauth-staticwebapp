@@ -39,7 +39,7 @@
     "responseOverrides": {
         "401": {
             "statusCode": 302,
-            "redirect": "https://nice-flower-00dd14810.2.azurestaticapps.net/.auth/login/azureActiveDirectory/callback"
+            "redirect": "https://nice-flower-00dd14810.2.azurestaticapps.net/.auth/login/aad/callback"
         }
     }
 }
