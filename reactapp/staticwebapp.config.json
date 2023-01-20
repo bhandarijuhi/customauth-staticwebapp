@@ -3,17 +3,6 @@
         "rewrite": "/index.html",
         "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
     },
-    "auth": {
-        "identityProviders": {
-          "azureActiveDirectory": {
-            "registration": {
-              "openIdIssuer": "https://login.microsoftonline.com/2c126865-89da-4212-8537-34319f305788/v2.0",
-              "clientIdSettingName": "AZURE_CLIENT_ID",
-              "clientSecretSettingName": "AZURE_CLIENT_SECRET"
-            }
-          }
-      }
-    },
     "routes": [   
         {
             "route": "/.auth/login/twitter",
@@ -41,5 +30,17 @@
             "statusCode": 302,
             "redirect": "/.auth/login/aad"
         }
+    },
+    "auth": {
+        "identityProviders": {
+          "azureActiveDirectory": {
+            "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+            "registration": {
+              "openIdIssuer": "https://login.microsoftonline.com/2c126865-89da-4212-8537-34319f305788/v2.0",
+              "clientIdSettingName": "AZURE_CLIENT_ID",
+              "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+            }
+          }
+      }
     }
 }
